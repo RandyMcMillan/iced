@@ -9,12 +9,12 @@ pub fn main() -> iced::Result {
 
 #[derive(Default)]
 struct Component {
-    value: Option<u32>,
+    value: Option<u128>,
 }
 
 #[derive(Debug, Clone, Copy)]
 enum Message {
-    NumericInputChanged(Option<u32>),
+    NumericInputChanged(Option<u128>),
 }
 
 impl Component {
@@ -38,13 +38,13 @@ mod numeric_input {
     use iced::{Center, Element, Fill, Length, Size};
 
     pub struct NumericInput<Message> {
-        value: Option<u32>,
-        on_change: Box<dyn Fn(Option<u32>) -> Message>,
+        value: Option<u128>,
+        on_change: Box<dyn Fn(Option<u128>) -> Message>,
     }
 
     pub fn numeric_input<Message>(
-        value: Option<u32>,
-        on_change: impl Fn(Option<u32>) -> Message + 'static,
+        value: Option<u128>,
+        on_change: impl Fn(Option<u128>) -> Message + 'static,
     ) -> NumericInput<Message> {
         NumericInput::new(value, on_change)
     }
@@ -58,8 +58,8 @@ mod numeric_input {
 
     impl<Message> NumericInput<Message> {
         pub fn new(
-            value: Option<u32>,
-            on_change: impl Fn(Option<u32>) -> Message + 'static,
+            value: Option<u128>,
+            on_change: impl Fn(Option<u128>) -> Message + 'static,
         ) -> Self {
             Self {
                 value,
@@ -115,7 +115,7 @@ mod numeric_input {
                     "Type a number",
                     self.value
                         .as_ref()
-                        .map(u32::to_string)
+                        .map(u128::to_string)
                         .as_deref()
                         .unwrap_or(""),
                 )
