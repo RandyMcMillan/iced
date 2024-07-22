@@ -30,6 +30,7 @@ pub fn main() -> iced::Result {
 
 #[derive(Default)]
 struct Component {
+    count: u8,
     value: Option<u128>,
 }
 
