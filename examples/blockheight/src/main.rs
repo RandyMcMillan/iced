@@ -48,7 +48,6 @@ impl Component {
     }
 
     fn view(&self) -> Element<Message> {
-        //center(numeric_input(self.value, Message::NumericInputChanged))
         center(numeric_input(blockheight(), Message::NumericInputChanged))
             .padding(20)
             .into()
