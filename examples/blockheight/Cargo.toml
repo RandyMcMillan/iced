@@ -1,0 +1,12 @@
+[package]
+name = "blockheight"
+version = "0.1.0"
+authors = ["RandyMcMillan <randy.lee.mcmillan@gmail.com>", "Héctor Ramón Jiménez <hector0193@gmail.com>"]
+edition = "2021"
+publish = false
+
+[dependencies]
+ascii = "1.1.0"
+iced.features = ["debug", "lazy"]
+iced.workspace = true
+reqwest = { version = "0.12.5", features = ["blocking"] }
